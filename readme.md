@@ -32,6 +32,10 @@ A simple automation script that launches a Formula 1 stream via MultiViewer for 
 
 ---
 
+# 🖥️ How to launch the script
+
+Simply double click on the .bat file
+
 ## 🛠 Requirements
 
 - NVDIA GeForce Experience
