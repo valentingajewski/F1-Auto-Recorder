@@ -19,9 +19,13 @@ A simple automation script that launches a Formula 1 stream via MultiViewer for 
 1. You input the **scheduled time** of the Grand Prix (e.g. `15:00`).
 2. You specify the **screen coordinates** for:
    - Live button
+   - Home button
    - Stream tile
    - Audio selector
    - Video window (for fullscreen double-click)
+
+[image](parameters_config.PNG)
+
 3. When you click **Start**, the script waits until:
    - **2 minutes before the race**: clicks "Live"
    - Then clicks the stream tile
@@ -34,7 +38,8 @@ A simple automation script that launches a Formula 1 stream via MultiViewer for 
 
 # 🖥️ How to launch the script
 
-Simply double click on the .bat file
+Simply double click on the .bat file. The script will launch the Multiviewer for F1 software.
+You need to let you PC switch on.
 
 ## 🛠 Requirements
 
