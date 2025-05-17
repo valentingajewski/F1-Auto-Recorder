@@ -24,7 +24,7 @@ A simple automation script that launches a Formula 1 stream via MultiViewer for 
    - Audio selector
    - Video window (for fullscreen double-click)
 
-[alt text](parameters_config.PNG)
+[Config parameters](parameters_config.PNG)
 
 3. When you click **Start**, the script waits until:
    - **2 minutes before the race**: clicks "Live"
