@@ -36,7 +36,7 @@ A simple automation script that launches a Formula 1 stream via MultiViewer for 
 
 ---
 
-# 🖥️ How to launch the script
+## 🖥️ How to launch the script
 
 Simply double click on the .bat file. The script will launch the Multiviewer for F1 software.
 You need to let you PC switch on.
