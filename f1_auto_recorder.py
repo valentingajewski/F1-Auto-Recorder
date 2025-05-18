@@ -54,13 +54,13 @@ def start_recording_task(gp_time_str, home_coords, live_btn_coords, flux_coords,
         pyautogui.moveTo(*live_btn_coords)
         pyautogui.click()
 
-        time.sleep(2)
+        time.sleep(5)
 
         print("🖱 Clicking on stream")
         pyautogui.moveTo(*flux_coords)
         pyautogui.click()
 
-        time.sleep(2)
+        time.sleep(5)
 
         print("🔊 Clicking on audio")
         pyautogui.moveTo(*sound_coords)
@@ -193,23 +193,23 @@ def launch_interface():
     entry_sound = add_row("Audio button coords (x,y):", 6, config.get("sound", ""))
     entry_window = add_row("Video window coords (x,y):", 7, config.get("window", ""))
 
-    # MultiViewer path row
-    tk.Label(container, text="MultiViewer folder:", bg="#ffffff", anchor="w").grid(row=7, column=0, sticky="w", padx=10, pady=5)
+    # Bump to row 8 and beyond
+    tk.Label(container, text="MultiViewer folder:", bg="#ffffff", anchor="w").grid(row=8, column=0, sticky="w", padx=10, pady=5)
     software_path = tk.StringVar()
     default_folder = config.get("multiviewer_path", "")
     if default_folder:
         software_path.set(os.path.join(default_folder, DEFAULT_SOFTWARE_NAME))
     entry_path = tk.Entry(container, textvariable=software_path, width=25)
-    entry_path.grid(row=7, column=1, padx=10, pady=5)
+    entry_path.grid(row=8, column=1, padx=10, pady=5)
 
     btn_browse = tk.Button(container, text="Browse...", command=choose_folder, width=15)
-    btn_browse.grid(row=8, column=0, columnspan=2, pady=(0, 8))
+    btn_browse.grid(row=9, column=0, columnspan=2, pady=(0, 8))
 
-    tk.Button(container, text="▶ Start", width=15, command=on_start).grid(row=9, column=0, pady=10)
-    tk.Button(container, text="💾 Save Config", width=15, command=on_save_config).grid(row=9, column=1, pady=10)
+    tk.Button(container, text="▶ Start", width=15, command=on_start).grid(row=10, column=0, pady=10)
+    tk.Button(container, text="💾 Save Config", width=15, command=on_save_config).grid(row=10, column=1, pady=10)
 
     label_cursor = tk.Label(container, text="Mouse position: ", fg="blue", bg="#ffffff")
-    label_cursor.grid(row=10, column=0, columnspan=2, pady=(0, 10))
+    label_cursor.grid(row=11, column=0, columnspan=2, pady=(0, 10))
 
     update_cursor_position()
     update_timer()
