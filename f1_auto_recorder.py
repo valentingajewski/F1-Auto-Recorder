@@ -181,10 +181,26 @@ def launch_interface():
 
     def add_row(label_text, row_index, default_value):
         tk.Label(container, text=label_text, bg="#ffffff", anchor="w").grid(row=row_index, column=0, sticky="w", padx=10, pady=5)
-        entry = tk.Entry(container, width=25)
+        
+        frame = tk.Frame(container, bg="#ffffff")
+        frame.grid(row=row_index, column=1, padx=10, pady=5, sticky="w")
+        
+        entry = tk.Entry(frame, width=18)
         entry.insert(0, default_value)
-        entry.grid(row=row_index, column=1, padx=10, pady=5)
+        entry.pack(side='left')
+
+        def test_position():
+            try:
+                x, y = map(int, entry.get().split(","))
+                pyautogui.moveTo(x, y)
+            except Exception:
+                messagebox.showerror("Error", f"Invalid coordinates for {label_text}")
+
+        btn = tk.Button(frame, text="Test", width=5, command=test_position)
+        btn.pack(side='left', padx=(5, 0))
+
         return entry
+
 
     entry_time = add_row("GP Time (HH:MM):", 2, config.get("time", ""))
     entry_home = add_row("Home button coords (x,y):", 3, config.get("home", ""))
@@ -192,6 +208,7 @@ def launch_interface():
     entry_flux = add_row("Stream click coords (x,y):", 5, config.get("flux", ""))
     entry_sound = add_row("Audio button coords (x,y):", 6, config.get("sound", ""))
     entry_window = add_row("Video window coords (x,y):", 7, config.get("window", ""))
+
 
     # Bump to row 8 and beyond
     tk.Label(container, text="MultiViewer folder:", bg="#ffffff", anchor="w").grid(row=8, column=0, sticky="w", padx=10, pady=5)
